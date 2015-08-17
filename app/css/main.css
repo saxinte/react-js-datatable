@@ -1,0 +1,7 @@
+h1,h2,p {
+	margin: 0;
+}
+td:hover {
+	cursor: pointer;
+	outline:rgb(91, 157, 217) solid 1px;
+}
