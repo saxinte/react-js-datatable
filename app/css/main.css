@@ -1,7 +1,17 @@
 h1,h2,p {
 	margin: 0;
 }
-td:hover {
+.cell-content {
+	position: relative;
+}
+.cell-label {
+	display: block;
+	line-height: 34px;
+	margin:0;
 	cursor: pointer;
-	outline:rgb(91, 157, 217) solid 1px;
+}
+.cell-input {
+	position: absolute;
+	top:0;
+	left:0;
 }
