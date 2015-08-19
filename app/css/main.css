@@ -1,17 +1,35 @@
 h1,h2,p {
 	margin: 0;
 }
+.table {
+	table-layout: fixed;
+}
+.th1 {
+	width:17%;
+}
+.th2, .th3, .th4 {
+	width:27.66667%;
+}
 .cell-content {
 	position: relative;
 }
 .cell-label {
 	display: block;
-	line-height: 34px;
+	overflow: hidden;
 	margin:0;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	line-height: 34px;
 	cursor: pointer;
+	font-weight: normal;
 }
 .cell-input {
 	position: absolute;
 	top:0;
 	left:0;
+}
+/* Thanks bootstrap */
+.table-striped>tbody>tr:nth-child(even)>td:hover,
+.table-striped>tbody>tr:nth-child(odd)>td:hover {
+	background-color: #EEE;
 }

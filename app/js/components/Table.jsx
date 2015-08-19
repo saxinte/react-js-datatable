@@ -15,10 +15,10 @@ var Table = React.createClass({
             <table className="table table-striped table-bordered">
 
                 <tr>
-                    <th>ID</th>
-                    <th>Nickname</th>
-                    <th>Role</th>
-                    <th>Age</th>
+                    <th className="th1">ID</th>
+                    <th className="th2">Nickname</th>
+                    <th className="th3">Role</th>
+                    <th className="th4">Age</th>
                 </tr>
 
                 {this.state.gamers.map(function(gamer) {
