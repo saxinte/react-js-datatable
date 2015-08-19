@@ -5,8 +5,8 @@ var Cell = React.createClass({
 
     getInitialState: function() {
         return {
-            'INITIAL_VALUE': this.props.content,
-            'value': this.props.content,
+            'INITIAL_VALUE': this.props.text,
+            'value': this.props.text,
             'editMode': false
         }
     },
@@ -51,7 +51,7 @@ var Cell = React.createClass({
 
     render: function() {
         return (
-            <td>
+            <td className={this.props.class}>
                 <div className="cell-content">
                     <label className="cell-label" onClick={this.toggleEditMode}>{this.state.value}</label>
                     <InputElement ref="inputElement" value={this.state.value} editMode={this.state.editMode} onBlur={this.toggleEditMode} onChange={this.onChange} />
