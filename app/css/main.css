@@ -1,6 +1,25 @@
 h1,h2,p {
 	margin: 0;
 }
+/* Player form */
+.player-form {
+	overflow: hidden;
+}
+.player-form .form-group,
+.player-form .submit-group {
+	float:left;
+	padding: 0 15px 0 0;
+	width:30%;
+}
+.player-form .submit-group {
+	width:10%;
+	padding-right: 0;
+}
+.player-form .btn-submit-player {
+	display: block;
+	width:100%;
+	margin-top: 25px;
+}
 /* Table */
 .table {
 	table-layout: fixed;
@@ -13,13 +32,10 @@ h1,h2,p {
 	text-align: center;
 }
 .table .th1 {
-	width:5%;
+	width:10%;
 }
-.table .th2 {
-	width:8%;
-}
-.table .th3, .table .th4, .table .th5 {
-	width:29%;
+.table .th2, .table .th3, .table .th4 {
+	width:30%;
 }
 .table .cell-content {
 	position: relative;
