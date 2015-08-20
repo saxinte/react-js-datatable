@@ -9,9 +9,9 @@ var Row = React.createClass({
                 <td>
                     <button className="btn btn-danger btn-delete" onClick={this.props.deleteGamer}>Delete</button>
                 </td>
-                <Cell text={this.props.gamerObject.nickname} />
-                <Cell text={this.props.gamerObject.role} />
-                <Cell text={this.props.gamerObject.age} />
+                <Cell gamerObject={this.props.gamerObject} type="nickname" />
+                <Cell gamerObject={this.props.gamerObject} type="role" />
+                <Cell gamerObject={this.props.gamerObject} type="age" />
             </tr>
         )
     }

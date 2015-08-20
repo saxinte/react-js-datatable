@@ -1,6 +1,36 @@
 h1,h2,p {
 	margin: 0;
 }
+/* Commons */
+.double-carret {
+	position: relative;
+	padding-right: 10px;
+}
+.double-carret:before,
+.double-carret:after {
+	position: absolute;
+	top:50%;
+	right:0;
+	content:"";
+	width: 0;
+	height: 0;
+	border-right: 3px solid transparent;
+	border-left: 3px solid transparent;
+}
+.double-carret:before {
+	border-bottom: 4px solid;
+	margin-top: -4px;
+}
+.double-carret:after {
+	border-top: 4px solid;
+	margin-top: 1px;
+}
+.disable-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 /* Player form */
 .player-form {
 	overflow: hidden;
@@ -23,6 +53,9 @@ h1,h2,p {
 /* Table */
 .table {
 	table-layout: fixed;
+}
+.table .sort-column {
+	cursor: pointer;
 }
 .table .btn-delete {
 	display:block;
@@ -47,9 +80,11 @@ h1,h2,p {
 	padding:0 5px;
 	white-space: nowrap;
 	text-overflow:ellipsis;
+	height: 34px;
 	line-height: 34px;
 	cursor: pointer;
 	font-weight: normal;
+	border-bottom: 1px solid #E0E0E0;
 }
 .table .cell-input {
 	position: absolute;

@@ -1,24 +1,23 @@
 var React = require('react');
 var InputElement  = require('./InputElement.jsx');
+var MainDispatcher = require('../dispatchers/AppDispatcher.js');
 
 var Cell = React.createClass({
 
     getInitialState: function() {
         return {
-            'INITIAL_VALUE': this.props.text,
-            'value': this.props.text,
             'editMode': false
         }
     },
 
-    updateValue: function(value) {
-        this.setState({
-            'value': value
-        });
-    },
+    onBlur: function(e) {
 
-    onChange: function(e) {
-        this.updateValue(e.target.value);
+        // toggle input display
+        this.toggleEditMode(); 
+
+        // then emit new value
+        MainDispatcher.emit('onCellChange', e.target.value, this.props.type, this.props.gamerObject);
+
     },
 
     inputFocus: function(element) {
@@ -28,33 +27,25 @@ var Cell = React.createClass({
         }
     },
 
-    onStateChange: function() {
-
-        // focus input element
+    onStateChange: function(e) {
         if(this.state.editMode){
             this.inputFocus( this.refs.inputElement.getDOMNode() );
-        }else {
-
-            // revert initial value if nothing was set
-            if(!this.state.value.length){
-                this.updateValue(this.state.INITIAL_VALUE);
-            }
         }
-
     },
 
-    toggleEditMode: function() {
+    toggleEditMode: function(e) {
         this.setState({
             'editMode': this.state.editMode ? false : true
         }, this.onStateChange);
     },
 
     render: function() {
+        var value = this.props.gamerObject[this.props.type];
         return (
-            <td className={this.props.class}>
+            <td>
                 <div className="cell-content">
-                    <label className="cell-label" onClick={this.toggleEditMode}>{this.state.value}</label>
-                    <InputElement ref="inputElement" value={this.state.value} editMode={this.state.editMode} onBlur={this.toggleEditMode} onChange={this.onChange} />
+                    <label className="cell-label" onClick={this.toggleEditMode}>{value}</label>
+                    <InputElement ref="inputElement" defaultValue={value} editMode={this.state.editMode} onBlur={this.onBlur} />
                 </div>
             </td>
         )
