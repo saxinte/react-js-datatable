@@ -55,15 +55,20 @@ var Table = React.createClass({
 
     sortColumn: function(filterBy) {
 
+        var reverseSort = this[filterBy] ? false : true;
+
         this.state.gamers.sort(function(a, b) {
             if(a[filterBy] > b[filterBy]){
-                return 1;
+                return reverseSort ? 1 : -1;
             }
             if(a[filterBy] < b[filterBy]){
-                return -1;
+                return reverseSort ? -1 : 1;
             }
             return 0;
         });
+
+        // Store sort information
+        this[filterBy] = reverseSort;
         
         this.updateState();
     },
