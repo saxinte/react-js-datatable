@@ -6,7 +6,7 @@ module.exports = [
     },
     {
         nickname: "willz",
-        age: 29,
+        age: 28,
         role: "Support"
     },
     {
@@ -21,7 +21,7 @@ module.exports = [
     },
     {
         nickname: "juks",
-        age: 28,
+        age: 27,
         role: "Entry fragger"
     },
     {
